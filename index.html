@@ -113,13 +113,11 @@
 					</section>
 					<section>
 					<a href="http://github.com/Treri/dotfile">http://github.com/Treri/dotfile</a>
-					<pre>
-						<code>
-git clone http://github.com/Treri/dotfile ~/.dotfile
-cd ~/.dotfile
-./install.sh zsh_rc
-						</code>
-					</pre>
+					<pre class="bash"><code>
+	git clone http://github.com/Treri/dotfile ~/.dotfile
+	cd ~/.dotfile
+	./install.sh zsh_rc
+					</code></pre>
 					</section>
 				</section>
 
@@ -142,10 +140,20 @@ cd ~/.dotfile
 					</section>
 				</section>
 
-				<section data-markdown>
-					`git merge --no-ff` (no fast forward)
+				<section>
+					<section data-markdown>
+						`git merge --no-ff` (no fast forward)
 
-					![](assets/git-branch-5.png)
+						![](assets/git-branch-5.png)
+					</section>
+					<section>
+						<pre class="bash"><code>
+	# feature complete
+	git checkout develop
+	git pull origin develop
+	git merge --no-ff feature/one
+						</code></pre>
+					</section>
 				</section>
 
 				<section>
@@ -172,6 +180,19 @@ cd ~/.dotfile
 
 						- Author
 						- Commiter
+					</section>
+
+					<section>
+						<pre class="bash"><code>
+	git commit # in local branch
+
+	git checkout feature/one
+	git pull origin feature/one
+	git checkout feature/one_local
+	git rebase feature/one
+	git checkout feature/one
+	git merge feature/one_local # without `--no-ff`
+						</code></pre>
 					</section>
 				</section>
 
